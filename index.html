@@ -9,9 +9,8 @@
 	box-sizing: border-box;
 }
 body {
-    background-image: url("https://raw.githubusercontent.com/blairjdaniel/blairjdaniel.github.io/main/index-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    
+    
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1.6;
 	margin: 0;
@@ -108,8 +107,24 @@ a {
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
 
-
+.video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	object-fit: cover;
+}
 
   </style>
     
@@ -132,5 +147,10 @@ a {
       </ul>
 	</header> 
     
+	<div class="video-background">
+		<iframe src="https://www.youtube.com/embed/qHYI6Kkn1Zo?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=qHYI6Kkn1Zo" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+
 </body>
 </html>
