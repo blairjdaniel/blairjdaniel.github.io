@@ -120,7 +120,19 @@ a {
 
 .dropdown:hover .dropdown-menu {
   display: block;
+} 
+
+.container {
+    width: 30%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    margin: 0 auto; /* This will center the container if it's less than 100% width */
+	
 }
+.container p {
+    color: #ffffff; /* Replace with your desired color */
+}
+
+
 
     </style>
 </head>
@@ -142,6 +154,14 @@ a {
       </ul>
 	</header> 
 
+	<button onclick="openPdf()">Resume</button>
+	<script>function openPdf() {
+		window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
+	}</script>
+	
+	<div class="container">
+		<p>Hey! I'm in the midst of my great renewal! LOL, I was a Stone Mason in Vancouver, Canada for the better part of 15 years with a few years of carpentry and forestry mixed in there. In 2021 I decided to give my body a break and started courses at UBC to learn Python and work in Data Science. I will be focusing on the AI side of dev. Cheers!</p>
+	</div>
 
 
 </body>
