@@ -129,9 +129,43 @@ a {
 	
 }
 .container p {
-    color: #ffffff; /* Replace with your desired color */
+    color: #6fa54b; /* Replace with your desired color */
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    
+    background-color: rgba(57, 54, 54, 0.038); /* Black w/ less opacity */
 }
 
+.modal-content {
+    background-color: #fefefed2;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 57%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 
     </style>
@@ -154,15 +188,38 @@ a {
       </ul>
 	</header> 
 
-	<button onclick="openPdf()">Resume</button>
-	<script>function openPdf() {
-		window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
-	}</script>
-	
-	<div class="container">
-		<p>Hey! I'm in the midst of my great career renewal! LOL, I was a Stone Mason in Vancouver, Canada for the better part of 15 years with a few years of carpentry and forestry mixed in there. In 2021 I decided to give my body a break and started courses at UBC to learn Python and work in Data Science. I will be focusing on the AI side of dev. Cheers!</p>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<div class="container">
+				<p>Hey! I'm in the midst of my great career renewal! I was a Stone Mason in Vancouver, Canada for the better part of 15 years with a few years of carpentry and forestry mixed in there. In 2021 I decided to give my body a break and started courses at UBC to learn Python and work in Data Science. My focus will be on Machine Learning and Data Visualization!<br><br>
+					Please click on the Resume button to take a look at what I've done with my life so far! <br><br><button onclick="openPdf()">Resume</button>
+						<script>function openPdf() {
+							window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
+	}					</script>
+				</p>
+			</div>
+		</div>
 	</div>
 
+	
+
+	<script>window.onload = function() {
+		var modal = document.getElementById("myModal");
+		var span = document.getElementsByClassName("close")[0];
+	
+		modal.style.display = "block";
+	
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+	
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	}</script>
 
 </body>
 </html>
