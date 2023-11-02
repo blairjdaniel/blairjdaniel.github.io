@@ -136,7 +136,55 @@
 .socials i {
     font-size: 1em; /* Change to adjust the size of the icons */
 }
+.container {
+    width: 30%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
+    margin: 0 auto; /* This will center the container if it's less than 100% width */
+	
+}
+.container p {
+    color: #6fa54b; /* Replace with your desired color */
+    text-align: center;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(57, 54, 54, 0.038);
+}
 
+.modal-content {
+    background-color: #fefefe84;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 57%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
         </style>
     
 </head>
@@ -163,5 +211,34 @@
       </ul>
 	</header> 
     
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container">
+                <p>
+                    <a href="mailto:blaircheredaryk@gmail.com">Email me</a><br>
+                    <a href="https://github.com/blairjdaniel" target="_blank">My Github <i class="fab fa-github"></i></a><br>
+			        <a href="https://www.twitter.com/blairjdaniel" target="_blank">My Twitter <i class="fab fa-twitter"></i></a><br>
+			        <a href="https://www.linkedin.com/in/blairjdaniel-1bb360258/" target="_blank">My LinkedIn <i class="fab fa-linkedin-in"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>window.onload = function() {
+        var modal = document.getElementById("myModal");
+        var span = document.getElementsByClassName("close")[0];
+    
+        modal.style.display = "block";
+    
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    }</script>
 </body>
 </html>
