@@ -10,7 +10,7 @@
 	box-sizing: border-box;
 }
 body {
-    background-image: url("https://raw.githubusercontent.com/blairjdaniel/blairjdaniel.github.io/main/projects-bg.jpg");
+    background-image: url("/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/ml-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
 	font-family: 'Montserrat', sans-serif;
@@ -82,14 +82,14 @@ a {
 		max-width: 1150px;
 	}
 	}
-
+	
 }
 @media (min-width: 1025px) {
 	.header {
 		flex-direction: row;
 		justify-content: space-between;
 	}
-
+	
 }
 .dropdown {
   position: relative;
@@ -125,7 +125,25 @@ a {
 .socials i {
     font-size: 1em; /* Change to adjust the size of the icons */
 }
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+	background-color: #e1f2f64c;
+}
+.button-container button {
+    padding: 40px 50px; /* Increase padding */
+    font-size: 20px; /* Increase font size */
+    width: 700px; /* Set a specific width */
+	margin: 15px 10px;
+	background-color: #e1f2f674 /* Make the button transparent */
 
+}
+.button-container button:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Change background color on hover */
+}
   </style>
     
 </head>
@@ -152,5 +170,19 @@ a {
       </ul>
 	</header> 
     
+	<div class="button-container">
+		<button onclick="location.href='machine_learning.html'" type="button">
+			Machine Learning Projects
+		</button>
+	
+		<button onclick="location.href='data_vis.html'" type="button">
+			Data Visualization Projects
+		</button>
+	
+		<button onclick="location.href='hockey.html'" type="button">
+			Hockey Projects
+		</button>
+	</div>
+
 </body>
 </html>
