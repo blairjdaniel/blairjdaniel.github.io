@@ -9,7 +9,7 @@
         box-sizing: border-box;
     }
     body {
-        background-image: linear-gradient(rgba(255, 255, 255, 0.374), rgba(255, 255, 255, 0.348)),url("https://raw.githubusercontent.com/blairjdaniel/blairjdaniel.github.io/main/contact-bg.jpg");
+        background-image: linear-gradient(rgba(255, 255, 255, 0.374), rgba(255, 255, 255, 0.348)),url("https://raw.githubusercontent.com/blairjdaniel/blairjdaniel.github.io/main/contact_bg.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         font-family: 'Montserrat', sans-serif;
@@ -142,9 +142,18 @@
     margin: 0 auto; /* This will center the container if it's less than 100% width */
 	
 }
+.container a {
+    margin: 15px 10px; /* Add horizontal margin */
+    transition: color 0.3s ease; /* Add transition for smooth hover effect */
+}
 .container p {
     color: #6fa54b; /* Replace with your desired color */
     text-align: center;
+    margin: 10px;
+    transition: color 0.3s ease; /* Add transition for smooth hover effect */
+}
+.container a:hover {
+    color: gray; /* Change color to gray on hover */
 }
 .modal {
     display: none; /* Hidden by default */
@@ -160,16 +169,17 @@
 }
 
 .modal-content {
-    background-color: #fefefe84;
+    background-color: #fefefe00;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    
     width: 57%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: left;
+    
 }
 
 .close {
