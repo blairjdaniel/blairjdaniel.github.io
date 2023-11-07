@@ -187,6 +187,50 @@ a {
 .socials i {
     font-size: 1em; /* Change to adjust the size of the icons */
 }
+#myCertPU {
+    display: none;
+    /* rest of your styles */
+}
+
+.cert-container img {
+    transition: transform 0.3s ease;
+    width: 100px; /* adjust as needed */
+    height: auto;
+}
+
+.cert-container img:hover {
+    transform: scale(5);
+}
+.cert {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 85px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.cert-content {
+    background-color: #fefefeb6;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    position: relative;
+    transform: translateY(-50%);
+    top: 10%;
+}
+.thumbnail {
+    transition: transform 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(5);
+}
 
     </style>
 </head>
@@ -218,18 +262,69 @@ a {
 			<span class="close">&times;</span>
 			<div class="container">
 				<p>Hey! I'm in the midst of my great career renewal! I was a Stone Mason in Vancouver, Canada for the better part of 15 years with a few years of carpentry and forestry mixed in there. In 2021 I decided to give my body a break and started courses at UBC to learn Python and work in Data Science. My focus will be on Machine Learning and Data Visualization!<br><br>
-					Please click on the Resume button to take a look at what I've done with my life so far! <br><br><button onclick="openPdf()">Resume</button>
-						<script>function openPdf() {
+					Please click on the Resume button to take a look at what I've done with my life so far! <br><br>
+					<button onclick="openPdf()">Resume</button>
+					<button onclick="openSlider()">Certification</button>
+					<script>
+						function openPdf() {
 							window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
-	}					</script>
+						}
+					
+						function openSlider() {
+							var certModal = document.getElementById("myCertPU");
+							certModal.style.display = "block";
+						}
+					
+						window.onload = function() {
+    					var modal = document.getElementById("myCertPU");
+    					var span = document.getElementsByClassName("close_myCertPU")[0];
+    					var thumbnails = document.getElementsByClassName("thumbnail");
+    					var fullSizeImage = document.getElementById("fullSizeImage");
+
+    					span.onclick = function() {
+        					modal.style.display = "none";
+    					}
+
+    					window.onclick = function(event) {
+        					if (event.target == modal) {
+            					modal.style.display = "none";
+        					}
+    					}
+						for (var i = 0; i < thumbnails.length; i++) {
+    						thumbnails[i].addEventListener('click', function() {
+        					var fullSizeImages = document.querySelectorAll('.cert-container img');
+        				for (var j = 0; j < fullSizeImages.length; j++) {
+            				if (fullSizeImages[j].src === this.src.replace('thumbnail', 'fullsize')) {
+                				fullSizeImages[j].style.display = 'block';
+            		    }else {
+                		fullSizeImages[j].style.display = 'none';
+            			}
+        }
+    });
+}
+    
+    }
+
+					</script>
 				</p>
 			</div>
 		</div>
 	</div>
 
-	
+	<div id="myCertPU" class="cert">
+		<div class="cert-content">
+			<span class="close_myCertPU">&times;</span>
+			<div class="cert-container">
+				<img id="Intermediate JavaScript" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn_Intermediate_JS.jpg" alt="Intermediate JavaScript">
+				<img id="Learn HTML" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn_HTML.jpg" alt="Image 2">
+				<img id="Learn CSS" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn+CSS.jpg">
+			</div>
+		</div>
+	</div>
 
-	<script>window.onload = function() {
+	<script>
+	
+		window.onload = function() {
 		var modal = document.getElementById("myModal");
 		var span = document.getElementsByClassName("close")[0];
 	
@@ -244,7 +339,15 @@ a {
 				modal.style.display = "none";
 			}
 		}
-	}</script>
+	}
+	for (var i = 0; i < thumbnails.length; i++) {
+        thumbnails[i].addEventListener('click', function() {
+            fullSizeImage.src = this.src;
+        });
+    }
+	</script>
+	
+
 
 </body>
 </html>
