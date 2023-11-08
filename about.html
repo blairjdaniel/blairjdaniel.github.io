@@ -266,46 +266,31 @@ a {
 					<button onclick="openPdf()">Resume</button>
 					<button onclick="openSlider()">Certification</button>
 					<script>
+
+						var certModal = document.getElementById("myCertPU");
+						var span = document.getElementsByClassName("close_myCertPU")[0];
+
 						function openPdf() {
 							window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
 						}
-					
 						function openSlider() {
 							var certModal = document.getElementById("myCertPU");
-							certModal.style.display = "block";
+        					certModal.style.display = "block";
 						}
-					
-						window.onload = function() {
-    					var modal = document.getElementById("myCertPU");
-    					var span = document.getElementsByClassName("close_myCertPU")[0];
-    					var thumbnails = document.getElementsByClassName("thumbnail");
-    					var fullSizeImage = document.getElementById("fullSizeImage");
 
-    					span.onclick = function() {
-        					modal.style.display = "none";
-    					}
+						span.onclick = function() {
+            						certModal.style.display = "none";
+        				}
 
-    					window.onclick = function(event) {
-        					if (event.target == modal) {
-            					modal.style.display = "none";
-        					}
-    					}
-						for (var i = 0; i < thumbnails.length; i++) {
-    						thumbnails[i].addEventListener('click', function() {
-        					var fullSizeImages = document.querySelectorAll('.cert-container img');
-        				for (var j = 0; j < fullSizeImages.length; j++) {
-            				if (fullSizeImages[j].src === this.src.replace('thumbnail', 'fullsize')) {
-                				fullSizeImages[j].style.display = 'block';
-            		    }else {
-                		fullSizeImages[j].style.display = 'none';
-            			}
-        }
-    });
-}
-    
-    }
-
+        				window.onclick = function(event) {
+            				if (event.target == certModal) {
+                				certModal.style.display = "none";
+            				}
+        				} 	
 					</script>
+					
+					
+					
 				</p>
 			</div>
 		</div>
@@ -315,9 +300,20 @@ a {
 		<div class="cert-content">
 			<span class="close_myCertPU">&times;</span>
 			<div class="cert-container">
-				<img id="Intermediate JavaScript" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn_Intermediate_JS.jpg" alt="Intermediate JavaScript">
-				<img id="Learn HTML" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn_HTML.jpg" alt="Image 2">
-				<img id="Learn CSS" src="/Users/blairjdaniel/blairjdaniel-git-pages/blairjdaniel.github.io/Learn+CSS.jpg">
+				<img id="Key Capabilites in Data Science - Python" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/f632a1a8-1e20-4fc3-3e2a-cff64811ac00/public">
+				<img id="Circuit Stream XR/VR" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/18edfdc8-cfac-48c2-aedd-ea2992344800/public">
+				<img id="LearnIntermediate JavaScript" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/6b06dd33-4797-480c-43ba-2e4a498a3600/public">
+				<img id="Learn HTML" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/aaf86b8f-e52e-45a8-c845-08923f0f4800/public">
+				<img id="Learn CSS" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/e12fc666-fe9e-48b5-da24-8e9a64751600/public">
+				<img id="Learn To Building Interactive Websites" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/13f43ceb-a184-4013-56d3-1b68f67a6d00/public">
+				<img id="Learn Code Foundations" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/488302af-9d6f-4bfa-31e1-7f1268341300/public">
+				<img id="Learn To Create Front End App" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/aeffff16-873b-4b9e-bcd3-2f8e02380b00/public">
+				<img id="Learn Command Line" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/43ba0e6b-0ec3-4441-01cc-34c9ffa5db00/public">
+				<img id="Learn Typescript" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/0e53bbbb-430d-437d-68c8-73112873ab00/public">
+				<img id="Learn GitHub" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/0e33d51e-4d7f-45b2-c2eb-96974e3b8100/public">
+				<img id="Learn React" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/c4f8093b-b61c-43cc-5475-aa7df26fdb00/public">
+				<img id="Learn Web Development" src="https://imagedelivery.net/6Zd827ntxJzbKr8wufKU4w/0b26765b-38e1-43b5-ec6f-41dfd8dde100/public">
+				
 			</div>
 		</div>
 	</div>
@@ -340,11 +336,6 @@ a {
 			}
 		}
 	}
-	for (var i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].addEventListener('click', function() {
-            fullSizeImage.src = this.src;
-        });
-    }
 	</script>
 	
 
