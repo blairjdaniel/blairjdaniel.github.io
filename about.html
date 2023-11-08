@@ -265,29 +265,7 @@ a {
 					Please click on the Resume button to take a look at what I've done with my life so far! <br><br>
 					<button onclick="openPdf()">Resume</button>
 					<button onclick="openSlider()">Certification</button>
-					<script>
-
-						var certModal = document.getElementById("myCertPU");
-						var span = document.getElementsByClassName("close_myCertPU")[0];
-
-						function openPdf() {
-							window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
-						}
-						function openSlider() {
-							var certModal = document.getElementById("myCertPU");
-        					certModal.style.display = "block";
-						}
-
-						span.onclick = function() {
-            						certModal.style.display = "none";
-        				}
-
-        				window.onclick = function(event) {
-            				if (event.target == certModal) {
-                				certModal.style.display = "none";
-            				}
-        				} 	
-					</script>
+					
 					
 					
 					
@@ -338,7 +316,29 @@ a {
 	}
 	</script>
 	
+	<script>
 
+		var certModal = document.getElementById("myCertPU");
+		var span = document.getElementsByClassName("close_myCertPU")[0];
+
+		function openPdf() {
+			window.open('https://github.com/blairjdaniel/blairjdaniel.github.io/blob/main/Resume.pdf', '_blank', 'width=600,height=600');
+		}
+		function openSlider() {
+			var certModal = document.getElementById("myCertPU");
+			certModal.style.display = "block";
+		}
+
+		span.onclick = function() {
+					certModal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == certModal) {
+				certModal.style.display = "none";
+			}
+		} 	
+	</script>
 
 </body>
 </html>
