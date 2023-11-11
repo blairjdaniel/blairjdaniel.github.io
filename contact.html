@@ -178,7 +178,11 @@
     justify-content: center;
     align-items: center;
     text-align: left;
+    display: none;
     
+}
+.mobile-only-link {
+    display: none; /* Hide the link by default */
 }
 @media screen and (max-width: 600px) {
     .modal-content {
@@ -188,13 +192,14 @@
         margin: 80px;
 
     }
-}
-@media screen and (max-width: 600px) {
     #myModal {
         margin-top: 60px; /* adjust as needed */
         width: 80%;
     }
-}
+    .mobile-only-link {
+        display: inline; /* Show the link on small screens */
+
+}}
 
 .close {
     color: #aaaaaa;
@@ -209,6 +214,10 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+
         </style>
     
 </head>
@@ -247,6 +256,13 @@
                 </p>
             </div>
         </div>
+        <div class="mobile-links">
+            <a href="mailto:blaircheredaryk@gmail.com" class="mobile-only-link">Email Me</a><br>
+            <a href="https://github.com/blairjdaniel" class="mobile-only-link">My Github <i class="fab fa-github"></i></a><br>
+            <a href="https://www.twitter.com/blairjdaniel" class="mobile-only-link">My Twitter <i class="fab fa-twitter"></i></a><br>
+            <a href="https://www.linkedin.com/in/blairjdaniel-1bb360258/" class="mobile-only-link">My LinkedIn <i class="fab fa-linkedin-in"></i></a>
+        </div>
+
     </div>
     <script>window.onload = function() {
         var modal = document.getElementById("myModal");
