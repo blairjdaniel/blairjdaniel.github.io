@@ -128,9 +128,9 @@ a {
 } 
 
 .container {
-    width: 100%; /* Adjust as needed */
+    width: 80%; /* Adjust as needed */
     height: auto; /* Adjust as needed */
-    margin: 10px auto; /* This will center the container if it's less than 100% width */
+    margin: 10px 10px 10px 10px; /* This will center the container if it's less than 100% width */
 	
 }
 .container p {
@@ -346,6 +346,11 @@ button:hover {
 				modal.style.display = "none";
 			}
 		}
+		modal.addEventListener('click', function(event) {
+    		if (event.target == modal) {
+        		modal.style.display = 'none';
+    		}
+		});
 	}
 	</script>
 	
@@ -372,6 +377,8 @@ button:hover {
 			}
 		} 	
 	</script>
+
+
 
 </body>
 </html>
