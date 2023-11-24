@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Unity WebGL Game</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/Users/blairjdaniel/AI Games/rv-lot-builder/Assets/Resources/stylesheet.css">
+</head>
+<body>
+    <div id="gameContainer"></div>
+    <div id="loadingBar"><div class="progress"></div></div>
+    <div id="errorMessage" style="display: none;">An error occurred while loading the game.</div>
+    <button onclick="loadScene('Scene1')">Load Scene 1</button>
+    <button onclick="loadScene('Scene2')">Load Scene 2</button>
+    <button onclick="loadScene('Scene3')">Load Scene 3</button>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+        var gameInstance = null;
+
+        function UnityProgress(gameInstance, progress) {
+            var loadingBar = document.getElementById("loadingBar");
+            if (!loadingBar) return;
+            loadingBar.style.width = 100 * progress + "%";
+        }
+
+        function loadScene(sceneName) {
+            gameInstance.SendMessage('YourGameObject', 'LoadScene', sceneName);
+        }
+
+        gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {
+            onProgress: UnityProgress,
+            onRuntimeError: function() {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
