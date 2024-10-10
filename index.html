@@ -64,6 +64,20 @@ a {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between videos as needed */
+    flex-wrap: wrap; /* Ensure videos wrap on smaller screens */
+}
+
+.video-container {
+    flex: 1 1 45%; /* Adjust the width of the video containers */
+    max-width: 560px; /* Ensure the video containers do not exceed the iframe width */
+    box-sizing: border-box;
+}
+
 /* ================================= 
   Media Queries
 ==================================== */
@@ -149,13 +163,15 @@ a {
 		
 	</header> 
     
-	<!-- Add your YouTube video here -->
+	<!-- Add your YouTube videos here -->
+<div class="video-wrapper">
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/4aGdwNa0kLs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-	<div class="video-container">
+    <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/F9R0hvFEOCg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+</div>
 	
 	
 	  
